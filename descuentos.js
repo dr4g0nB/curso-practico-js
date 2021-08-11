@@ -5,6 +5,19 @@ function calcularDescuento(precio, descuento) {
   return precioConDescuento;
 }
 
+function priceDiscount() {
+  const inputPrice = document.getElementById("inputPrice");
+  const priceValue = inputPrice.value;
+  
+  const inputDiscount = document.getElementById("inputDiscount");
+  const discountValue = inputDiscount.value;
+
+  const precioConDescuento = calcularPrecioConDescuento(priceValue, discountValue);
+
+  const totalP = document.getElementById("totalPrice");
+  totalP.innerText = "El precio con descuento son: $" + precioConDescuento;
+}
+
 //Se le esta enviando un objeto al console.log
 //console.log({
 //  precioOriginal,
@@ -49,5 +62,4 @@ class Product {
   computeRealPrice() {
     return `The real price of your ${this.name} is ${this.computeDiscount().toFixed(2)}`
   }
-
 }
